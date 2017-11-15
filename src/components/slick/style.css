@@ -1,0 +1,44 @@
+.slick__images-3,
+.slick__images-2,
+.slick__images-1,
+.slick__images {
+    background: no-repeat center;
+    background-size: 100% 100%;
+    height: 100vh;
+    filter: brightness(60%);
+}
+.slick__images-1 {
+    background-image: url(images/1.jpg);
+}
+.slick__images-2 {
+    background-image: url(images/2.jpg);
+}
+.slick__images-3 {
+    background-image: url(images/3.jpg);
+}
+.slick-slider,
+.slick-initialized {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+}
+.slick-thumb,
+.slick-dots {
+    position: absolute;
+    bottom: 0;
+}
+.slick-dots li.slick-active button:before {
+    color: wheat;
+}
+.slick-next {
+    right: 15px;
+}
+.slick-prev {
+    left: 10px;
+    z-index: 1;
+}
+.slick-prev:before, .slick-next:before {
+    opacity: .75;
+    color: papayawhip;
+}

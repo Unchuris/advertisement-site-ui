@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-redux-i18n';
 import { getAdvertisements } from './action';
-
 import './style.css';
 
 class Advertisements extends Component {
@@ -12,7 +10,6 @@ class Advertisements extends Component {
     this.props.getAdvertisements();
   }
   renderAdvertisements() {
-    console.log(this.props.data);
     if (this.props.data !== undefined) {
       if (this.props.data.length > 0) {
         return (

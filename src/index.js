@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from 'react';
 import { render } from 'react-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
@@ -14,6 +15,8 @@ import MetaTags from 'react-meta-tags';
 
 import muiTheme from './utils/muiTheme';
 import { getMuiTheme } from 'material-ui/styles/index';
+import { HomeLayout } from './components/layout/homeLayout/HomeLayout';
+import Home from './pages/home/Home';
 import Advertisements from './pages/advertisements/Advertisements';
 import 'normalize.css';
 import './index.css';
@@ -21,8 +24,6 @@ import './index.css';
 injectTapEventPlugin();
 
 export const history = createBrowserHistory();
-
-
 render(
   <div>
     <MetaTags>
@@ -32,7 +33,8 @@ render(
       <Provider store={store}>
         <Router history={history}>
           <Switch>
-            <Route exact path='/' component={Advertisements}/>
+            <HomeLayout exact path='/' component={Home}/>
+            <Route exact path='/adv' component={Advertisements} />
             <Redirect to={'/404'} />
           </Switch>
         </Router>
