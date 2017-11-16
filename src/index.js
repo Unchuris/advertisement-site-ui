@@ -34,7 +34,7 @@ render(
         <Router history={history}>
           <Switch>
             <HomeLayout exact path='/' component={Home}/>
-            <Route exact path='/adv' component={Advertisements} />
+            <Route exact path='/advertisements' component={Advertisements} />
             <Redirect to={'/404'} />
           </Switch>
         </Router>

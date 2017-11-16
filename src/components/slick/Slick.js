@@ -24,8 +24,4 @@ class Slick extends Component {
     );
   }
 }
-
-Slick.defaultProps = {
-
-};
 export default Slick;

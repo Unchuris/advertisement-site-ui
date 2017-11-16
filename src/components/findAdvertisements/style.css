@@ -1,0 +1,31 @@
+.find-ad__wrapper {
+    display: inline-block;
+    width: 50%;
+    height: 190px;
+    background-color: black;
+    opacity: 0.5;
+    font-family: Roboto, sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: 400;
+    padding: 30px 40px;
+}
+.find-ad__content {
+    opacity: 1.0;
+    text-align: left;
+}
+.find-ad__title-text {
+
+}
+.button__find-ad {
+    display: block;
+    margin-top: 10px;
+    float: right;
+}
+.checkbox {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 100%;
+}

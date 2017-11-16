@@ -1,0 +1,14 @@
+.button {
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+.button_disabled {
+  background-color: gray;
+}
+.button__nav {
+  height: 100%;
+  width: 50px;
+}

@@ -3,7 +3,7 @@ import { SET_APP_DATA_ADVERTISEMENTS } from '../../utils/actionTypes';
 
 export function getAdvertisements() {
   return (dispatch) => {
-    get('/advertisements')
+    get('/adv')
       .then((response) => {
         dispatch({
           type: SET_APP_DATA_ADVERTISEMENTS,
