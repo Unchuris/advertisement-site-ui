@@ -36,7 +36,7 @@
 }
 .slick-prev {
     left: 10px;
-    z-index: 1;
+    z-index: 10;
 }
 .slick-prev:before, .slick-next:before {
     opacity: .75;

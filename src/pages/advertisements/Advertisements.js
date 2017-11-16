@@ -3,18 +3,19 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-redux-i18n';
 import { getAdvertisements } from './action';
+import Ad from '../../components/ad/Ad';
 import './style.css';
 
 class Advertisements extends Component {
   componentDidMount() {
-    this.props.getAdvertisements();
+    this.props.getAdvertisements(this.props.location.search);
   }
   renderAdvertisements() {
     if (this.props.data !== undefined) {
       if (this.props.data.length > 0) {
         return (
           this.props.data.map((elem) => (
-            elem.Title
+            <Ad key={`advertisement-${elem.id}`} ad={elem}/>
           )
           ));
       }
