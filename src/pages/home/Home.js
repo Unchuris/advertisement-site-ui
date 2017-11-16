@@ -9,11 +9,8 @@ class Home extends Component {
     return (
       <div>
         <Slick/>
-        <div className='form-layout'>
-          <div className='block__middle'>
-            <FindAdvertisements/>
-          </div>
-          <div className='helper'/>
+        <div className='block__middle'>
+          <FindAdvertisements/>
         </div>
       </div>
     );

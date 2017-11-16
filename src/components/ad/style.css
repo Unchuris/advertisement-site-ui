@@ -1,3 +1,36 @@
 .ad {
     display: block;
+    margin-top: 30px;
+}
+.ad-images {
+    display: inline-block;
+    width: 360px;
+    height: 260px;
+}
+.ad__title-text {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    font-family: Roboto, sans-serif;
+    color: rgb(104, 24, 52);
+    font-size: 24px;
+    font-weight: 500;
+}
+.textarea {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: inherit;
+    border: none;
+    resize: none;
+    min-height: 167px;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent;
+    font-family: Roboto, sans-serif;
+    color: rgb(104, 24, 52);
+    font-size: 24px;
+    font-weight: 400;
 }

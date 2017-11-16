@@ -8,6 +8,15 @@ const translationObject = {
           submit: 'Search',
         },
       },
+      layout: {
+        header: {
+          logo: 'wayhome.com',
+          signIn: 'signIn',
+          signOut: 'signOut',
+          create: 'create',
+          ad: 'advertisements',
+        },
+      },
     },
     pages: {
       advertisements: {
@@ -22,6 +31,15 @@ const translationObject = {
           title: 'Найти квартиру своей мечты',
           hintText: 'Текст',
           submit: 'Найти',
+        },
+      },
+      layout: {
+        header: {
+          logo: 'wayhome.com',
+          signIn: 'войти',
+          signOut: 'зарегистрироваться',
+          create: 'создать',
+          ad: 'все объявления',
         },
       },
     },

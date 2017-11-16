@@ -23,6 +23,8 @@
     "react-scripts": "1.0.17",
     "react-slick": "^0.15.4",
     "react-tap-event-plugin": "^3.0.2",
+    "react-visibility-sensor": "^3.11.0",
+    "react-textarea-autosize": "^5.0.7",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "slick-carousel": "^1.8.1"

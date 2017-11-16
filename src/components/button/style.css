@@ -5,6 +5,9 @@
   color: white;
   border: none;
 }
+.button:hover {
+  opacity: 0.8;
+}
 .button_disabled {
   background-color: gray;
 }

@@ -1,15 +1,6 @@
 .block__middle {
-    display: inline-block;
-    width: 100%;
-    vertical-align: middle;
-}
-.helper {
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-    width: 0;
-}
-.form-layout {
-    height: 100vh;
-    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

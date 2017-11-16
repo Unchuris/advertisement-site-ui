@@ -1,7 +1,11 @@
 .layout {
-    max-width: 1300px;
-    margin: auto;
     background-color:  white;
     height: 100vh;
     position: relative;
+}
+.wrapper {
+    max-width: 1024px;
+    margin: auto;
+    background-color: #fcf2fb;
+    min-height: calc(100% - 100px);
 }

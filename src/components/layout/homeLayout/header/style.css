@@ -1,0 +1,51 @@
+header {
+    max-width: 1024px;
+    height: 100px;
+    margin: 0 auto;
+}
+.header-wrapper {
+    width: 100%;
+    background-color: #2a1727;
+}
+header nav {
+    display: inline-block;
+    text-decoration: none;
+    float: right;
+    text-transform: uppercase;
+    height: 100%;
+}
+header nav a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+}
+header nav::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+.logo {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    float: left;
+    height: 100%;
+}
+.logo::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+.nav__ref:hover,
+.logo:hover {
+    opacity: 0.5;
+}
+.main-text {
+    font-size: 18px;
+    color: rgb(251, 255, 255);
+}
+.nav__ref {
+    margin-left: 50px;
+    color: rgba(255, 255, 255, 0.7);
+}
