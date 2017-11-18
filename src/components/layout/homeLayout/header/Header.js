@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import './style.css';
 import { I18n } from 'react-redux-i18n';
-
+import ModalWindow from '../../../modalWindow/ModalWindow';
 export default class Header extends Component {
   render() {
     return (
