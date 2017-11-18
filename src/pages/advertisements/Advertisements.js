@@ -16,7 +16,7 @@ class Advertisements extends Component {
       if (this.props.data.length > 0) {
         return (
           this.props.data.map((elem) => (
-            <Ad key={`advertisement-${elem.id}`} ad={elem}/>
+            <Ad key={`advertisement-${elem.Id}`} ad={elem}/>
           )
           ));
       }

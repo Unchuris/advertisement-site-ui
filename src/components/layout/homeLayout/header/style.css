@@ -14,10 +14,16 @@ header nav {
     text-transform: uppercase;
     height: 100%;
 }
+.header__modal-window {
+    display: inline-block;
+    cursor: pointer;
+}
+.header__modal-window,
 header nav a {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.7);
 }
+.header__modal-window::before,
 header nav::before {
     content: '';
     display: inline-block;
@@ -37,6 +43,7 @@ header nav::before {
     vertical-align: middle;
     height: 100%;
 }
+.header__modal-window:hover,
 .nav__ref:hover,
 .logo:hover {
     opacity: 0.5;
@@ -45,7 +52,20 @@ header nav::before {
     font-size: 18px;
     color: rgb(251, 255, 255);
 }
+.header__modal-window,
 .nav__ref {
     margin-left: 50px;
     color: rgba(255, 255, 255, 0.7);
+}
+.header__modal-close-up {
+    width: 14px;
+    height: 14px;
+    background-image: url('../images/cross.svg');
+    background-size: cover;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.header__modal-close-up:hover {
+    opacity: 0.8;
 }

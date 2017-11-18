@@ -11,8 +11,8 @@ const translationObject = {
       layout: {
         header: {
           logo: 'wayhome.com',
-          signIn: 'signIn',
-          signOut: 'signOut',
+          signIn: 'sign-In',
+          signUp: 'sign-Up',
           create: 'create',
           ad: 'advertisements',
         },
@@ -37,7 +37,7 @@ const translationObject = {
         header: {
           logo: 'wayhome.com',
           signIn: 'войти',
-          signOut: 'зарегистрироваться',
+          signUp: 'зарегистрироваться',
           create: 'создать',
           ad: 'все объявления',
         },

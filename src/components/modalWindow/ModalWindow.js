@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import './style.css';
 const customStyles = {
   overlay: {
-    backgroundColor: 'rgba(255, 255, 255, 0.75)',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
   content: {
     top: '50%',
@@ -12,7 +12,8 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    maxWidth: '900px',
+    maxWidth: '700px',
+    borderColor: '#681834',
   },
 };
 class ModalWindow extends Component {
@@ -26,11 +27,11 @@ class ModalWindow extends Component {
   }
   openModal() {
     this.setState({ modalIsOpen: true });
-    this.props.open();
+    this.props.openModal();
   }
   closeModal() {
     this.setState({ modalIsOpen: false });
-    this.props.close();
+    this.props.closeModal();
   }
   render() {
     let openStyle = `modal-open ${this.props.openStyle}`;

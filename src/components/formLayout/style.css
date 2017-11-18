@@ -1,0 +1,25 @@
+.form-layout {
+  font-family: Roboto, sans-serif;
+  margin: auto;
+  width: 60%;
+  height: 100%;
+}
+.form_container {
+  margin-top: 20px;
+  font-size: 18px;
+}
+.helper {
+  display:inline-block;
+  vertical-align: middle;
+  height: 90%;
+  width: 0;
+}
+.logo__title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+  height: 100%;
+}

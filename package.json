@@ -9,11 +9,13 @@
     "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",
     "material-ui": "^0.18.7",
+    "material-ui-password-field": "^1.4.0",
     "normalize.css": "^7.0.0",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-image": "^1.3.1",
+    "react-material-ui-form-validator": "^1.0.1",
     "react-meta-tags": "^0.3.0",
     "react-modal": "^2.4.1",
     "react-modal-wrapper": "^0.4.0",
@@ -29,7 +31,8 @@
     "react-visibility-sensor": "^3.11.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "react-form-validator-core": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
