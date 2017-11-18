@@ -4,16 +4,20 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { ValidatorForm } from 'react-form-validator-core';
 import { TextValidator } from 'react-material-ui-form-validator';
 import PasswordField from 'material-ui-password-field';
+import { signUp } from './action';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { I18n } from 'react-redux-i18n';
 import './style.css';
 
-export default class SignUp extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
       formData: {
         email: '',
         password: '',
+        name: '',
         repeatPassword: '',
       },
       isValid: true,
@@ -40,7 +44,7 @@ export default class SignUp extends Component {
 
   handleSubmit() {
     if (this.state.formData.password.length > 7) {
-      // logic
+      this.props.signUp(this.state.formData);
     }
   }
   onClick() {
@@ -103,3 +107,14 @@ export default class SignUp extends Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  signUp: bindActionCreators(signUp, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
