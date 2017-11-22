@@ -7,6 +7,7 @@ import PasswordField from 'material-ui-password-field';
 import { signUp } from './action';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router';
 import { I18n } from 'react-redux-i18n';
 import './style.css';
 
@@ -45,6 +46,7 @@ class SignUp extends Component {
   handleSubmit() {
     if (this.state.formData.password.length > 7) {
       this.props.signUp(this.state.formData);
+      this.props.success ? this.props.modalClose() : null;
     }
   }
   onClick() {
@@ -117,4 +119,4 @@ const mapDispatchToProps = (dispatch) => ({
   signUp: bindActionCreators(signUp, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SignUp));

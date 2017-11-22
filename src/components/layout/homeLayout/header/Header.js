@@ -5,17 +5,22 @@ import { I18n } from 'react-redux-i18n';
 import ModalWindow from '../../../modalWindow/ModalWindow';
 import SignUp from '../../../signUp/SignUp';
 import SignIn from '../../../signIn/SignIn';
-export default class Header extends Component {
+
+class Header extends Component {
   constructor() {
     super();
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
+    this.modalIsOpen = this.modalIsOpen.bind(this);
   }
   open() {
     console.log('open');
   }
   close() {
     console.log('close');
+  }
+  modalIsOpen(flag) {
+    this.refs.sign.close();
   }
   render() {
     return (
@@ -39,22 +44,28 @@ export default class Header extends Component {
             </NavLink>
             <div className='header__modal-window'>
               <ModalWindow
+                ref='modalSignIn'
                 closeStyle='header__modal-close-up'
                 openText={I18n.t('components.layout.header.signIn')}
                 closeModal={this.close}
                 openModal={this.open}
               >
-                <SignIn/>
+                <SignIn
+                  modalClose={() => this.refs.modalSignIn.closeModal()}
+                />
               </ModalWindow>
             </div>
             <div className='header__modal-window'>
               <ModalWindow
+                ref='modalSignUp'
                 closeStyle='header__modal-close-up'
                 openText={I18n.t('components.layout.header.signUp')}
                 closeModal={this.close}
                 openModal={this.open}
               >
-                <SignUp/>
+                <SignUp
+                  modalClose={() => this.refs.modalSignUp.closeModal()}
+                />
               </ModalWindow>
             </div>
           </nav>
@@ -63,3 +74,4 @@ export default class Header extends Component {
     );
   }
 }
+export default Header;

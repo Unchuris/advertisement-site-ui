@@ -7,6 +7,7 @@ import PasswordField from 'material-ui-password-field';
 import { signIn } from './action';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router';
 import { I18n } from 'react-redux-i18n';
 
 class SignIn extends Component {
@@ -31,9 +32,9 @@ class SignIn extends Component {
   handleSubmit() {
     if (this.state.formData.password.length > 7) {
       this.props.signIn(this.state.formData);
+      this.props.success ? this.props.modalClose() : null;
     }
   }
-
   render() {
     const { formData } = this.state;
     return (
@@ -80,4 +81,4 @@ const mapDispatchToProps = (dispatch) => ({
   signIn: bindActionCreators(signIn, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SignIn));
