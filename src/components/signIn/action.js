@@ -1,19 +1,17 @@
 import { post } from '../../utils/fetcher';
-import { SIGN_UP } from '../../utils/actionTypes';
+import { SIGN_IN } from '../../utils/actionTypes';
 
-export function signUp(user) {
+export function signIn(user) {
   return (dispatch) => {
-    post('/api/signUp', {
-      Signup: {
-        Email: user.email,
+    post('/api/signIn', {
+      Login: {
         Password: user.password,
-        Password2: user.repeatPassword,
         Username: user.name,
       },
     })
       .then((response) => {
         dispatch({
-          type: SIGN_UP,
+          type: SIGN_IN,
           data: response,
         });
       });

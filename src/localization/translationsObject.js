@@ -20,7 +20,7 @@ const translationObject = {
     },
     pages: {
       advertisements: {
-        text: 'Test',
+        text: 'The list is empty',
       },
     },
   },
@@ -45,7 +45,7 @@ const translationObject = {
     },
     pages: {
       advertisements: {
-        text: 'Тест',
+        text: 'Список пуст',
       },
     },
   },

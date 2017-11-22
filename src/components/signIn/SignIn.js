@@ -4,51 +4,34 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { ValidatorForm } from 'react-form-validator-core';
 import { TextValidator } from 'react-material-ui-form-validator';
 import PasswordField from 'material-ui-password-field';
-import { signUp } from './action';
+import { signIn } from './action';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-redux-i18n';
-import './style.css';
 
-class SignUp extends Component {
+class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
       formData: {
-        email: '',
         password: '',
         name: '',
-        repeatPassword: '',
       },
       isValid: true,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.onClick = this.onClick.bind(this);
   }
-  componentWillMount() {
-    // custom rule will have name 'isPasswordMatch'
-    ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
-      return value === this.state.formData.password;
-    });
-  }
-
   handleChange(event) {
     const { formData } = this.state;
     formData[event.target.name] = event.target.value;
     this.setState({ formData });
-    if (event.target.name === 'password') {
-      this.setState({ isValid: event.target.value.length > 7 });
-    }
   }
 
   handleSubmit() {
     if (this.state.formData.password.length > 7) {
-      this.props.signUp(this.state.formData);
+      this.props.signIn(this.state.formData);
     }
-  }
-  onClick() {
-    this.setState({ isValid: this.state.formData.password.length > 7 });
   }
 
   render() {
@@ -59,15 +42,6 @@ class SignUp extends Component {
           ref='form'
           onSubmit={this.handleSubmit}
         >
-          <TextValidator
-            floatingLabelText='Email'
-            onChange={this.handleChange}
-            name='email'
-            value={formData.email}
-            validators={[ 'required', 'isEmail' ]}
-            errorMessages={[ 'this field is required', 'email is not valid' ]}
-            fullWidth={true}
-          />
           <TextValidator
             floatingLabelText='Name'
             onChange={this.handleChange}
@@ -86,20 +60,9 @@ class SignUp extends Component {
             value={formData.password}
             fullWidth={true}
           />
-          <TextValidator
-            floatingLabelText='Repeat password'
-            onChange={this.handleChange}
-            name='repeatPassword'
-            type='password'
-            validators={[ 'required', 'isPasswordMatch' ]}
-            errorMessages={[ 'password mismatch', 'this field is required' ]}
-            value={formData.repeatPassword}
-            fullWidth={true}
-          />
           <RaisedButton
             type='submit'
-            label='sign-up'
-            onClick={this.onClick}
+            label='sign-in'
             className='sign-up__button'
           />
         </ValidatorForm>
@@ -109,12 +72,12 @@ class SignUp extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    success: state.appCompReducerSignUp.success,
+    success: state.appCompReducerSignIn.success,
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  signUp: bindActionCreators(signUp, dispatch),
+  signIn: bindActionCreators(signIn, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

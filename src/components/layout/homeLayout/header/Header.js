@@ -4,6 +4,7 @@ import './style.css';
 import { I18n } from 'react-redux-i18n';
 import ModalWindow from '../../../modalWindow/ModalWindow';
 import SignUp from '../../../signUp/SignUp';
+import SignIn from '../../../signIn/SignIn';
 export default class Header extends Component {
   constructor() {
     super();
@@ -36,12 +37,16 @@ export default class Header extends Component {
               to='/'>
               {I18n.t('components.layout.header.create')}
             </NavLink>
-            <NavLink
-              className='nav__ref'
-              activeClassName='nav__ref nav__ref-line'
-              to='/'>
-              {I18n.t('components.layout.header.signIn')}
-            </NavLink>
+            <div className='header__modal-window'>
+              <ModalWindow
+                closeStyle='header__modal-close-up'
+                openText={I18n.t('components.layout.header.signIn')}
+                closeModal={this.close}
+                openModal={this.open}
+              >
+                <SignIn/>
+              </ModalWindow>
+            </div>
             <div className='header__modal-window'>
               <ModalWindow
                 closeStyle='header__modal-close-up'
