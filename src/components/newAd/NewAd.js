@@ -6,12 +6,12 @@ import { I18n } from 'react-redux-i18n';
 import Button from '../button/Button';
 import './style.css';
 const hintStyle = {
-  fontSize: '24px',
+  fontSize: '20px',
   fontWeight: '400',
   color: '#681834',
 };
 const inputStyle = {
-  fontSize: '24px',
+  fontSize: '20px',
   fontWeight: '400',
   width: '100%',
   color: '#681834',
@@ -23,9 +23,11 @@ export default class NewAd extends Component {
       files: [],
       textarea: '',
       inputValue: '',
+      hidden: true,
     };
     this.handleChangeInputField = this.handleChangeInputField.bind(this);
     this.handleChangeTextarea = this.handleChangeTextarea.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   getFiles(files) {
@@ -40,6 +42,16 @@ export default class NewAd extends Component {
     this.setState({
       textarea: event.target.value,
     });
+  }
+  handleSubmit(event) {
+    if (this.state.files.length > 0 && this.state.textarea !== '' && this.state.inputValue !== '') {
+      this.props.create(event);
+    } else {
+      this.setState({
+        hidden: false,
+      });
+    }
+    event.preventDefault();
   }
 
   render() {
@@ -65,7 +77,6 @@ export default class NewAd extends Component {
           }}
           value={this.state.textarea}
           fullWidth={true}
-          multiLine={true}
           rows={1}
           rowsMax={4}
           hintText={I18n.t('components.form.newAd.hintText')}
@@ -76,13 +87,17 @@ export default class NewAd extends Component {
           multiple={ true }
           onDone={ this.getFiles.bind(this) }
         />
-        <Img src={base64Icon} className='new-ad-images'/>
         <Button type='submit'
           hidden={false}
           disabled={false}
           value={I18n.t('components.form.newAd.submit')}
           className={'button__new-ad'}
-          handleClick={this.handleSubmit}/>
+          handleClick={this.handleSubmit}
+        />
+        <div className='new-ad__error-text' hidden={this.state.hidden}>
+          {I18n.t('components.form.newAd.error')}
+        </div>
+        <Img src={base64Icon} className='new-ad-images'/>
       </div>
     );
   }

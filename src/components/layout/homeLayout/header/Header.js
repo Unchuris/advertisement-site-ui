@@ -5,24 +5,28 @@ import { I18n } from 'react-redux-i18n';
 import ModalWindow from '../../../modalWindow/ModalWindow';
 import SignUp from '../../../signUp/SignUp';
 import SignIn from '../../../signIn/SignIn';
-
+let isOpen = false;
 class Header extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
     this.modalIsOpen = this.modalIsOpen.bind(this);
   }
+
   open() {
-    console.log('open');
+    //console.log('open');
   }
   close() {
-    console.log('close');
+    //console.log('close');
   }
   modalIsOpen(flag) {
     this.refs.sign.close();
   }
   render() {
+    this.props.location.state !== undefined ?
+      isOpen = this.props.location.state.signin
+      : isOpen = false;
     return (
       <div className='header-wrapper'>
         <header>
@@ -49,6 +53,7 @@ class Header extends Component {
                 openText={I18n.t('components.layout.header.signIn')}
                 closeModal={this.close}
                 openModal={this.open}
+                default={isOpen}
               >
                 <SignIn
                   modalClose={() => this.refs.modalSignIn.closeModal()}
@@ -62,6 +67,7 @@ class Header extends Component {
                 openText={I18n.t('components.layout.header.signUp')}
                 closeModal={this.close}
                 openModal={this.open}
+                default={false}
               >
                 <SignUp
                   modalClose={() => this.refs.modalSignUp.closeModal()}

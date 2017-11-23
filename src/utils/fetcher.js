@@ -19,6 +19,7 @@ function getResponseJson(response) {
 export function get(url) {
   return fetch(url, {
     method: 'GET',
+    credentials: 'include',
     headers: new Headers({
       'Accept': 'application/json',
       'Content-Type': 'application/json',

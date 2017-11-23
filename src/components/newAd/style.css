@@ -1,18 +1,29 @@
 .new-ad {
     display: block;
-    margin-top: 30px;
+    padding-top: 100px;
 }
 .new-ad-images {
-    display: block;
-    width: 360px;
-    height: 260px;
+    width: 100%;
+    height: 560px;
 }
-.ad__title-text {
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 20px;
+.new-ad__error-text,
+.new-ad__title-text {
+    display: block;
     font-family: Roboto, sans-serif;
     color: rgb(104, 24, 52);
     font-size: 24px;
     font-weight: 500;
+    margin-top: 20px;
+}
+.button__new-ad {
+    display: inline-block;
+    font-family: Roboto, sans-serif;
+    color: black;
+    font-size: 24px;
+    font-weight: 500;
+    float: right;
+}
+.new-ad__error-text {
+    font-size: 20px;
+    color: red;
 }

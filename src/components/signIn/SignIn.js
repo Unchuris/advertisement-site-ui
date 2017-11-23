@@ -38,7 +38,7 @@ class SignIn extends Component {
   render() {
     const { formData } = this.state;
     return (
-      <FormLayout>
+      <FormLayout textTitle ={I18n.t('components.layout.header.signIn')}>
         <ValidatorForm
           ref='form'
           onSubmit={this.handleSubmit}

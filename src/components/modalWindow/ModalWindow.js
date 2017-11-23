@@ -25,6 +25,9 @@ class ModalWindow extends Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
+  componentWillMount() {
+    this.props.default ? this.openModal() : null;
+  }
   openModal() {
     this.setState({ modalIsOpen: true });
     this.props.openModal();

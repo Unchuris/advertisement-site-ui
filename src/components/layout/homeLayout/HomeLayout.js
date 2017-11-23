@@ -6,7 +6,7 @@ export const HomeLayout = ({ component: Component, ...rest }) => {
   return (
     <Route {...rest} render={(matchProps) => (
       <div className='layout'>
-        <Header/>
+        <Header location={matchProps.location}/>
         <div className='wrapper'>
           <div className='content'>
             <Component {...matchProps} />

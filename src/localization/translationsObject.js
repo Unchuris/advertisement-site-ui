@@ -12,6 +12,7 @@ const translationObject = {
           hintText: 'Text',
           submit: 'Create',
           textareaText: 'Text',
+          error: 'Not all fields are filled',
         },
       },
       layout: {
@@ -43,6 +44,7 @@ const translationObject = {
           hintText: 'Текст',
           submit: 'Создать',
           textareaText: 'Текст',
+          error: 'Не все поля заполнены',
         },
       },
       layout: {

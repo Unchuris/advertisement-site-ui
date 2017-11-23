@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { I18n } from 'react-redux-i18n';
 import './style.css';
 
 class FormLayout extends Component {
@@ -7,7 +6,7 @@ class FormLayout extends Component {
     return (
       <div className='form-layout'>
         <div className='logo__title'>
-          {I18n.t('components.layout.header.signUp')}
+          {this.props.textTitle}
         </div>
         <div className='form_container'>
           {this.props.children}
