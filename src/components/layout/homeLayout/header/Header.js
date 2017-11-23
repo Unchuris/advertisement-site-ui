@@ -39,7 +39,7 @@ class Header extends Component {
             <NavLink
               className='nav__ref'
               activeClassName='nav__ref nav__ref-line'
-              to='/'>
+              to='/advertisement/create'>
               {I18n.t('components.layout.header.create')}
             </NavLink>
             <div className='header__modal-window'>

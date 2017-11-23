@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { I18n } from 'react-redux-i18n';
 import { getAdvertisements } from './action';
 import Ad from '../../components/ad/Ad';
-import FindAdvertisements from '../../components/findAdvertisements/FindAdvertisements';
 import './style.css';
 
 class Advertisements extends Component {

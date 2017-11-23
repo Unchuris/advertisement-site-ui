@@ -3,8 +3,6 @@ import { I18n } from 'react-redux-i18n';
 import withRouter from 'react-router-dom/es/withRouter';
 import TextField from 'material-ui/TextField';
 import Checkbox from 'material-ui/Checkbox';
-import ActionFavorite from 'material-ui/svg-icons/action/favorite';
-import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
 import Button from '../button/Button';
 import './style.css';
 class FindAdvertisements extends Component {
@@ -66,12 +64,12 @@ class FindAdvertisements extends Component {
               borderColor: '#4a3fe1',
             }}
             hintStyle={{
-              fontSize: '16px',
+              fontSize: '18px',
               fontWeight: '400',
               color: '#ffefd5',
             }}
             inputStyle={{
-              fontSize: '16px',
+              fontSize: '18px',
               fontWeight: '400',
               width: '100%',
               color: '#ffefd5',

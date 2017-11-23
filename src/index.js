@@ -18,6 +18,7 @@ import { getMuiTheme } from 'material-ui/styles/index';
 import { HomeLayout } from './components/layout/homeLayout/HomeLayout';
 import Home from './pages/home/Home';
 import Advertisements from './pages/advertisements/Advertisements';
+import CreateAdvertisement from './pages/createAdvertisement/CreateAdvertisement';
 import 'normalize.css';
 import './index.css';
 
@@ -35,6 +36,7 @@ render(
           <Switch>
             <Route exact path='/' component={Home}/>
             <HomeLayout exact path='/advertisements' component={Advertisements} />
+            <HomeLayout exact path='/advertisement/create' component={CreateAdvertisement} />
             <Redirect to={'/404'} />
           </Switch>
         </Router>
