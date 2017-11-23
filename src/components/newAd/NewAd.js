@@ -2,19 +2,30 @@ import React, { Component } from 'react';
 import FileBase64 from 'react-file-base64';
 import TextField from 'material-ui/TextField';
 import Img from 'react-image';
-import Textarea from 'react-textarea-autosize';
 import { I18n } from 'react-redux-i18n';
+import Button from '../button/Button';
 import './style.css';
+const hintStyle = {
+  fontSize: '24px',
+  fontWeight: '400',
+  color: '#681834',
+};
+const inputStyle = {
+  fontSize: '24px',
+  fontWeight: '400',
+  width: '100%',
+  color: '#681834',
+};
 export default class NewAd extends Component {
   constructor() {
     super();
     this.state = {
       files: [],
-      Textarea: '',
+      textarea: '',
       inputValue: '',
     };
-    this.handleChange = this.handleChange.bind(this);
     this.handleChangeInputField = this.handleChangeInputField.bind(this);
+    this.handleChangeTextarea = this.handleChangeTextarea.bind(this);
   }
 
   getFiles(files) {
@@ -25,9 +36,9 @@ export default class NewAd extends Component {
       inputValue: event.target.value,
     });
   }
-  handleChange(event) {
+  handleChangeTextarea(event) {
     this.setState({
-      Textarea: event.target.value,
+      textarea: event.target.value,
     });
   }
 
@@ -42,32 +53,36 @@ export default class NewAd extends Component {
           value={this.state.inputValue}
           fullWidth={true}
           hintText={I18n.t('components.form.newAd.hintText')}
-          hintStyle={{
-            fontSize: '24px',
-            fontWeight: '400',
-            color: '#681834',
-          }}
-          inputStyle={{
-            fontSize: '24px',
-            fontWeight: '400',
-            width: '100%',
-            color: '#681834',
-          }}/>
+          hintStyle={hintStyle}
+          inputStyle={inputStyle}
+        />
         <div className='new-ad__title-text'>
-          {I18n.t('components.form.newAd.text')}
+          {I18n.t('components.form.newAd.textareaText')}
         </div>
-        <Textarea
-          className='input-textarea'
-          type='text'
-          value={this.state.Textarea}
-          onChange={this.handleChange.bind(this)}
-          autoFocus={false}
+        <TextField onChange={this.handleChangeTextarea}
+          textareaStyle={{
+            overflow: 'hidden',
+          }}
+          value={this.state.textarea}
+          fullWidth={true}
+          multiLine={true}
+          rows={1}
+          rowsMax={4}
+          hintText={I18n.t('components.form.newAd.hintText')}
+          hintStyle={hintStyle}
+          inputStyle={inputStyle}
         />
         <FileBase64
           multiple={ true }
           onDone={ this.getFiles.bind(this) }
         />
         <Img src={base64Icon} className='new-ad-images'/>
+        <Button type='submit'
+          hidden={false}
+          disabled={false}
+          value={I18n.t('components.form.newAd.submit')}
+          className={'button__new-ad'}
+          handleClick={this.handleSubmit}/>
       </div>
     );
   }

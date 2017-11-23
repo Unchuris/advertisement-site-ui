@@ -7,6 +7,12 @@ const translationObject = {
           hintText: 'Text',
           submit: 'Search',
         },
+        newAd: {
+          title: 'Title',
+          hintText: 'Text',
+          submit: 'Create',
+          textareaText: 'Text',
+        },
       },
       layout: {
         header: {
@@ -31,6 +37,12 @@ const translationObject = {
           title: 'Найти квартиру своей мечты',
           hintText: 'Текст',
           submit: 'Найти',
+        },
+        newAd: {
+          title: 'Заголовок',
+          hintText: 'Текст',
+          submit: 'Создать',
+          textareaText: 'Текст',
         },
       },
       layout: {
