@@ -20,6 +20,7 @@ import AuthenticatedLayout from './components/layout/authenticatedLayout/Authent
 import Home from './pages/home/Home';
 import Advertisements from './pages/advertisements/Advertisements';
 import CreateAdvertisement from './pages/createAdvertisement/CreateAdvertisement';
+import UserAdvertisements from './pages/userAdvertisements/UserAdvertisements';
 import 'normalize.css';
 import './index.css';
 injectTapEventPlugin();
@@ -36,6 +37,7 @@ render(
             <Route exact path='/' component={Home}/>
             <HomeLayout exact path='/advertisements' component={Advertisements} />
             <AuthenticatedLayout exact path='/advertisement/create' component={CreateAdvertisement} />
+            <AuthenticatedLayout exact path='/my-advertisements' component={UserAdvertisements} />
             <Redirect to={'/404'} />
           </Switch>
         </Router>
