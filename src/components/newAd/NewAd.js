@@ -21,7 +21,9 @@ export default class NewAd extends Component {
     super();
     this.state = {
       ad: {
-        files: [],
+        files: [ {
+          base64: '',
+        } ],
         textarea: '',
         inputValue: '',
       },
@@ -29,6 +31,16 @@ export default class NewAd extends Component {
     };
     this.handleChangeInputField = this.handleChangeInputField.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  componentWillMount() {
+    const { defaultAd } = this.props;
+    if (defaultAd !== undefined) {
+      const { ad } = this.state;
+      ad.files[0].base64 = `data:image/png;base64,${defaultAd.Image}`;
+      ad['textarea'] = defaultAd.Text;
+      ad['inputValue'] = defaultAd.Title;
+      this.setState({ ad });
+    }
   }
 
   getFiles(files) {
