@@ -2,9 +2,10 @@ import { post } from '../../utils/fetcher';
 import { CREATE_AD } from '../../utils/actionTypes';
 export function createAd(ad) {
   return (dispatch) => {
-    post('/api/signUp', {
-      Signup: {
-      },
+    post('/api/ad/create', {
+      Title: ad.Title,
+      Text: ad.Text,
+      Image: ad.Image,
     })
       .then((response) => {
         dispatch({

@@ -20,32 +20,31 @@ export default class NewAd extends Component {
   constructor() {
     super();
     this.state = {
-      files: [],
-      textarea: '',
-      inputValue: '',
+      ad: {
+        files: [],
+        textarea: '',
+        inputValue: '',
+      },
       hidden: true,
     };
     this.handleChangeInputField = this.handleChangeInputField.bind(this);
-    this.handleChangeTextarea = this.handleChangeTextarea.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   getFiles(files) {
-    this.setState({ files: files });
+    const { ad } = this.state;
+    ad['files'] = files;
+    this.setState({ ad });
   }
   handleChangeInputField(event) {
-    this.setState({
-      inputValue: event.target.value,
-    });
+    const { ad } = this.state;
+    ad[event.target.name] = event.target.value;
+    this.setState({ ad });
   }
-  handleChangeTextarea(event) {
-    this.setState({
-      textarea: event.target.value,
-    });
-  }
+
   handleSubmit(event) {
-    if (this.state.files.length > 0 && this.state.textarea !== '' && this.state.inputValue !== '') {
-      this.props.create(event);
+    if (this.state.ad.files.length > 0 && this.state.textarea !== '' && this.state.inputValue !== '') {
+      this.props.create(this.state.ad);
     } else {
       this.setState({
         hidden: false,
@@ -55,37 +54,40 @@ export default class NewAd extends Component {
   }
 
   render() {
-    let base64Icon = this.state.files.length === 0 ? '' : this.state.files[0].base64;
+    let base64Icon = this.state.ad.files.length === 0 ? '' : this.state.ad.files[0].base64;
     return (
       <div className='new-ad'>
         <div className='new-ad__title-text'>
           {I18n.t('components.form.newAd.title')}
         </div>
         <TextField onChange={this.handleChangeInputField}
-          value={this.state.inputValue}
+          value={this.state.ad.inputValue}
           fullWidth={true}
           hintText={I18n.t('components.form.newAd.hintText')}
           hintStyle={hintStyle}
           inputStyle={inputStyle}
+          name='inputValue'
         />
         <div className='new-ad__title-text'>
           {I18n.t('components.form.newAd.textareaText')}
         </div>
-        <TextField onChange={this.handleChangeTextarea}
+        <TextField onChange={this.handleChangeInputField}
           textareaStyle={{
             overflow: 'hidden',
           }}
-          value={this.state.textarea}
+          value={this.state.ad.textarea}
           fullWidth={true}
           rows={1}
           rowsMax={4}
           hintText={I18n.t('components.form.newAd.hintText')}
           hintStyle={hintStyle}
           inputStyle={inputStyle}
+          name='textarea'
         />
         <FileBase64
           multiple={ true }
           onDone={ this.getFiles.bind(this) }
+          name='files'
         />
         <Button type='submit'
           hidden={false}

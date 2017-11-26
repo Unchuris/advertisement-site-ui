@@ -3,7 +3,6 @@ import NewAd from '../../components/newAd/NewAd';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router';
-import { I18n } from 'react-redux-i18n';
 import { createAd } from './action';
 import './style.css';
 
@@ -12,9 +11,11 @@ class CreateAdvertisement extends Component {
     super(props);
     this.create = this.create.bind(this);
   }
-  create(event) {
+  create(item) {
     let ad = {
-
+      Title: item.inputValue,
+      Text: item.textarea,
+      Image: item.files[0].base64.split('base64,')[1],
     };
     this.props.create(ad);
     this.props.success ? this.props.history.push('/advertisements') : null;
