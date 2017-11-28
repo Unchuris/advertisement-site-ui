@@ -7,20 +7,16 @@ import SignUp from '../../../signUp/SignUp';
 import SignIn from '../../../signIn/SignIn';
 let isOpen = false;
 class Header extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
     this.modalIsOpen = this.modalIsOpen.bind(this);
   }
 
-  open() {
-    //console.log('open');
-  }
-  close() {
-    //console.log('close');
-  }
-  modalIsOpen(flag) {
+  open() {}
+  close() {}
+  modalIsOpen() {
     this.refs.sign.close();
   }
   render() {
@@ -39,6 +35,12 @@ class Header extends Component {
               activeClassName='nav__ref nav__ref-line'
               to='/advertisements'>
               {I18n.t('components.layout.header.ad')}
+            </NavLink>
+            <NavLink
+              className='nav__ref'
+              activeClassName='nav__ref nav__ref-line'
+              to='/profiles'>
+              {I18n.t('components.layout.header.profiles')}
             </NavLink>
             <NavLink
               className='nav__ref'
