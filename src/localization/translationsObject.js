@@ -13,6 +13,7 @@ const translationObject = {
           submit: 'Create',
           textareaText: 'Text',
           error: 'Not all fields are filled',
+          edit: 'Edit',
         },
       },
       layout: {
@@ -45,6 +46,7 @@ const translationObject = {
           submit: 'Создать',
           textareaText: 'Текст',
           error: 'Не все поля заполнены',
+          edit: 'Редактировать',
         },
       },
       layout: {
