@@ -2,7 +2,17 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import './style.css';
 import { I18n } from 'react-redux-i18n';
+import { logout } from '../action';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 class Header extends Component {
+  constructor() {
+    super();
+    this.onClick = this.onClick.bind(this);
+  }
+  onClick() {
+    this.props.logout();
+  }
   render() {
     return (
       <div className='header-wrapper'>
@@ -35,10 +45,18 @@ class Header extends Component {
               to='/my-advertisements'>
               {I18n.t('components.layout.header.userAd')}
             </NavLink>
+            <div
+              className='header__modal-window'
+              onClick={this.onClick}>
+              {I18n.t('components.layout.header.logout')}
+            </div>
           </nav>
         </header>
       </div>
     );
   }
 }
-export default Header;
+const mapDispatchToProps = (dispatch) => ({
+  logout: bindActionCreators(logout, dispatch),
+});
+export default connect(null, mapDispatchToProps)(Header);

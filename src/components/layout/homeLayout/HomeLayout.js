@@ -8,10 +8,9 @@ const HomeLayout = ({ component: Component, ...rest }) => {
   return (
     <Route {...rest} render={(matchProps) => (
       <div className='layout'>
-        { !rest.isAuthenticated ?
+
           <Header location={matchProps.location}/> :
-          <Header2/>
-        }
+
         <div className='wrapper'>
           <div className='content'>
             <Component {...matchProps} />
