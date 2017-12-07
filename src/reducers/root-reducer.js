@@ -5,6 +5,7 @@ import appCompReducerUserAdvertisements from '../pages/userAdvertisements/reduce
 import appCompReducerCreateAdvertisement from '../pages/createAdvertisement/reducer';
 import appCompReducerAdvertisement from '../pages/advertisement/reducer';
 import appCompReducerProfiles from '../pages/profiles/reducer';
+import appCompReducerProfile from '../pages/profile/reducer';
 import appCompReducerSignIn from '../components/signIn/reducer';
 import appCompReducerSignUp from '../components/signUp/reducer';
 import appCompReducerAuthenticated from '../components/layout/authenticatedLayout/reducer';
@@ -19,6 +20,7 @@ const appReducer = combineReducers({
   appCompReducerUserAdvertisements,
   appCompReducerAuthenticated,
   appCompReducerProfiles,
+  appCompReducerProfile,
 });
 
 export default (state = {}, action) => {

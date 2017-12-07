@@ -22,6 +22,7 @@ import CreateAdvertisement from './pages/createAdvertisement/CreateAdvertisement
 import UserAdvertisements from './pages/userAdvertisements/UserAdvertisements';
 import Advertisement from './pages/advertisement/Advertisement';
 import Profiles from './pages/profiles/Profiles';
+import Profile from './pages/profile/Profile';
 import 'normalize.css';
 import './index.css';
 injectTapEventPlugin();
@@ -41,6 +42,7 @@ render(
             <AuthenticatedLayout exact path='/my-advertisements' component={UserAdvertisements} />
             <AuthenticatedLayout exact path='/advertisement/:id' component={Advertisement} />
             <AuthenticatedLayout exact path='/profiles' component={Profiles} />
+            <AuthenticatedLayout exact path='/profile' component={Profile} />
             <Redirect to={'/404'} />
           </Switch>
         </Router>

@@ -9,6 +9,8 @@ export const CREATE_AD = 'CREATE_AD';
 export const EDIT_ADVERTISEMENT = 'EDIT_ADVERTISEMENT';
 
 export const SET_APP_DATA_PROFILES = 'SET_APP_DATA_PROFILES';
+export const SET_APP_DATA_PROFILE = 'SET_APP_DATA_PROFILE';
+export const EDIT_PROFILE = 'EDIT_PROFILE';
 
 export const SIGN_UP = 'SIGN_UP';
 export const SIGN_IN = 'SIGN_IN';

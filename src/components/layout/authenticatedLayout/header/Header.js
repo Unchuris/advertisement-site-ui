@@ -45,6 +45,12 @@ class Header extends Component {
               to='/my-advertisements'>
               {I18n.t('components.layout.header.userAd')}
             </NavLink>
+            <NavLink
+              className='nav__ref'
+              activeClassName='nav__ref nav__ref-line'
+              to='/profile'>
+              {I18n.t('components.layout.header.MyInfo')}
+            </NavLink>
             <div
               className='header__modal-window'
               onClick={this.onClick}>
