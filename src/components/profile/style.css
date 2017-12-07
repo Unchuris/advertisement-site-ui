@@ -1,0 +1,27 @@
+.profile__image {
+  display: inline-block;
+  width: 148px;
+  height: 148px;
+  background-color: grey;
+}
+.profile {
+  font-family: Roboto, sans-serif;
+  color: rgb(104, 24, 52);
+  font-size: 24px;
+  font-weight: 500;
+}
+.profile__block__info {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
+}
+.profile__info {
+  margin-bottom: 15px;
+}
+.profile__count {
+  cursor: pointer;
+  border-bottom: 2px solid green;
+}
+.profile__count:hover {
+  opacity: 0.8;
+}
