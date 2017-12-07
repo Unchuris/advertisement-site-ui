@@ -1,12 +1,17 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Header from './header/Header';
+import Header2 from '../authenticatedLayout/header/Header';
 import './style.css';
-export const HomeLayout = ({ component: Component, ...rest }) => {
+const HomeLayout = ({ component: Component, ...rest }) => {
   return (
     <Route {...rest} render={(matchProps) => (
       <div className='layout'>
-        <Header location={matchProps.location}/>
+        { !rest.isAuthenticated ?
+          <Header location={matchProps.location}/> :
+          <Header2/>
+        }
         <div className='wrapper'>
           <div className='content'>
             <Component {...matchProps} />
@@ -16,3 +21,10 @@ export const HomeLayout = ({ component: Component, ...rest }) => {
     )} />
   );
 };
+HomeLayout.defaultProps = {
+  isAuthenticated: false,
+};
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.appCompReducerAuthenticated.success,
+});
+export default connect(mapStateToProps, null)(HomeLayout);

@@ -14,7 +14,7 @@ import MetaTags from 'react-meta-tags';
 
 import muiTheme from './utils/muiTheme';
 import { getMuiTheme } from 'material-ui/styles/index';
-import { HomeLayout } from './components/layout/homeLayout/HomeLayout';
+import HomeLayout from './components/layout/homeLayout/HomeLayout';
 import AuthenticatedLayout from './components/layout/authenticatedLayout/AuthenticatedLayout';
 import Home from './pages/home/Home';
 import Advertisements from './pages/advertisements/Advertisements';

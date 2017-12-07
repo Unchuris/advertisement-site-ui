@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import Header from '../homeLayout/header/Header';
+import Header from '../authenticatedLayout/header/Header';
 import { authenticated } from './action';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -13,7 +13,7 @@ const AuthenticatedLayout = ({ component: Component, ...props }) => {
     return (
       <Route {...props} render={(matchProps) => (
         <div className='layout'>
-          <Header location={matchProps.location}/>
+          <Header/>
           <div className='wrapper'>
             <div className='content'>
               <Component {...matchProps} />
